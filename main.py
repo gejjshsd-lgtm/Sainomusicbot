@@ -65,7 +65,7 @@ API_ID = int(os.environ.get("API_ID"))
 API_HASH = os.environ.get("API_HASH")
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 ASSISTANT_SESSION = os.environ.get("ASSISTANT_SESSION")
-OWNER_ID = int(os.getenv("OWNER_ID", "5268762773"))
+OWNER_ID = int(os.getenv("OWNER_ID", "8287505664"))
 
 # ——— Monkey-patch resolve_peer ——————————————
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
@@ -388,10 +388,10 @@ async def start_handler(_, message):
     buttons = [
         [
             InlineKeyboardButton(f"➕ {add_me_text}", url=f"{BOT_LINK}?startgroup=true"),
-            InlineKeyboardButton(f"📢 {updates_text}", url="https://t.me/vibeshiftbots")
+            InlineKeyboardButton(f"📢 {updates_text}", url="https://t.me/saikingdom")
         ],
         [
-            InlineKeyboardButton(f"💬 {support_text}", url="https://t.me/Frozensupport1"),
+            InlineKeyboardButton(f"💬 {support_text}", url="https://t.me/smart_chilli"),
             InlineKeyboardButton(f"❓ {help_text}", callback_data="show_help")
         ]
     ]
@@ -443,10 +443,10 @@ async def go_back_callback(_, callback_query):
     buttons = [
         [
             InlineKeyboardButton(f"➕ {add_me_text}", url=f"{BOT_LINK}?startgroup=true"),
-            InlineKeyboardButton(f"📢 {updates_text}", url="https://t.me/vibeshiftbots")
+            InlineKeyboardButton(f"📢 {updates_text}", url="https://t.me/saikingdom")
         ],
         [
-            InlineKeyboardButton(f"💬 {support_text}", url="https://t.me/Frozensupport1"),
+            InlineKeyboardButton(f"💬 {support_text}", url="https://t.me/smart_chilli"),
             InlineKeyboardButton(f"❓ {help_text}", callback_data="show_help")
         ]
     ]
@@ -716,14 +716,14 @@ async def process_play_command(message: Message, query: str):
         video_url, title, duration_iso, thumb = result
         if not video_url:
             await processing_message.edit(
-                "❌ Could not find the song. Try another query.\nSupport: @frozensupport1"
+                "❌ Could not find the song. Try another query.\nSupport: @saikingdom"
             )
             return
 
         secs = isodate.parse_duration(duration_iso).total_seconds()
         if secs > MAX_DURATION_SECONDS:
             await processing_message.edit(
-                "❌ Streams longer than 15 min are not allowed. If u are the owner of this bot contact @xyz09723 to upgrade your plan"
+                "❌ Streams longer than 15 min are not allowed. If u are the owner of this bot contact @saikingdom to upgrade your plan"
             )
             return
 
@@ -882,7 +882,7 @@ async def update_progress_caption(
 
 
 
-LOG_CHAT_ID = "@frozenmusiclogs"
+LOG_CHAT_ID = "@saikingdom"
 
 async def fallback_local_playback(chat_id: int, message: Message, song_info: dict):
     playback_mode[chat_id] = "local"
@@ -920,7 +920,7 @@ async def fallback_local_playback(chat_id: int, message: Message, song_info: dic
         one_line = _one_line_title(song_info["title"])
         base_caption = (
             "<blockquote>"
-            "<b>🎧 Frozen ✘ Music Streaming</b> (Local Playback)\n\n"
+            "<b>🎧 SAINO ✘ Music Streaming</b> (Local Playback)\n\n"
             f"❍ <b>Title:</b> {one_line}\n"
             f"❍ <b>Requested by:</b> {song_info['requester']}"
             "</blockquote>"
@@ -1154,7 +1154,7 @@ async def stop_handler(client, message):
         if "not in a call" in str(e).lower():
             await message.reply("❌ The bot is not currently in a voice chat.")
         else:
-            await message.reply(f"❌ An error occurred while leaving the voice chat: {str(e)}\n\nSupport: @frozensupport1")
+            await message.reply(f"❌ An error occurred while leaving the voice chat: {str(e)}\n\nSupport: @saikingdom")
         return
 
     # Clear the song queue
@@ -1177,7 +1177,7 @@ async def stop_handler(client, message):
 @bot.on_message(filters.command("song"))
 async def song_command_handler(_, message):
     keyboard = InlineKeyboardMarkup(
-        [[InlineKeyboardButton("🎶 Download Now", url="https://t.me/songdownloader1bot?start=true")]]
+        [[InlineKeyboardButton("🎶 Download Now", url="https://t.me/sainovcrebot?start=true")]]
     )
     text = (
         "ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ᴜsᴇ ᴛʜᴇ sᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ʙᴏᴛ. 🎵\n\n"
@@ -1556,7 +1556,7 @@ if __name__ == "__main__":
 
     me = bot.get_me()
     BOT_NAME = me.first_name or "Frozen Music"
-    BOT_USERNAME = me.username or os.getenv("BOT_USERNAME", "vcmusiclubot")
+    BOT_USERNAME = me.username or os.getenv("BOT_USERNAME", "sainovcbot")
     BOT_LINK = f"https://t.me/{BOT_USERNAME}"
 
     logger.info(f"✅ Bot Name: {BOT_NAME!r}")
