@@ -398,7 +398,7 @@ async def start_handler(_, message):
     reply_markup = InlineKeyboardMarkup(buttons)
 
     await message.reply_animation(
-        animation="https://frozen-imageapi.lagendplayersyt.workers.dev/file/2e483e17-05cb-45e2-b166-1ea476ce9521.mp4",
+        animation="https://image.cdn2.seaart.me/2024-08-22/cr3njfle878c738d170g/f083657ce3fef58cb9bd1894c0b5ee00df7c4fd1_high.webp",
         caption=caption,
         parse_mode=ParseMode.MARKDOWN,
         reply_markup=reply_markup
@@ -789,7 +789,7 @@ def parse_duration_str(duration_str: str) -> int:
                     return minutes * 60 + seconds
                 elif len(parts) == 3:
                     hours, minutes, seconds = parts
-                    return hours * 3600 + minutes * 60 + seconds
+                    return hours * 36000 + minutes * 60 + seconds
             except Exception as e2:
                 print(f"Error parsing colon-separated duration '{duration_str}': {e2}")
                 return 0
@@ -1304,7 +1304,7 @@ async def reboot_handler(_, message):
 
         await message.reply("♻️ Rebooted for this chat. All data for this chat has been cleared.")
     except Exception as e:
-        await message.reply(f"❌ Failed to reboot for this chat. Error: {str(e)}\n\n support - @frozensupport1")
+        await message.reply(f"❌ Failed to reboot for this chat. Error: {str(e)}\n\n support - @saikingdom")
 
 
 
