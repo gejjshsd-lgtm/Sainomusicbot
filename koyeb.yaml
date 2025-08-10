@@ -1,5 +1,5 @@
 services:
-  - name: frozen-music-bot
+  - name: SAINO-music-bot
     git:
       repo: "https://github.com/prashantsahlot/frozenvcmusicbot"
       branch: main
