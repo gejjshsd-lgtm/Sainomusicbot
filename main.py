@@ -915,9 +915,10 @@ async def fallback_local_playback(chat_id: int, message: Message, song_info: dic
         one_line = _one_line_title(song_info["title"])
         base_caption = (
             "<blockquote>"
-            "<b>🎧 SAINO ✘ Music Streaming</b> (Local Playback)\n\n"
-            f"❍ <b>Title:</b> {one_line}\n"
-            f"❍ <b>Requested by:</b> {song_info['requester']}"
+          "<b>🎧 𝗦𝗔𝗜𝗡𝗢 ✘ 𝑴𝒖𝒔𝒊𝒄 𝑺𝒕𝒓𝒆𝒂𝒎𝒊𝒏𝒈</b> (𝑳𝒐𝒄𝒂𝒍 𝑷𝒍𝒂𝒚𝒃𝒂𝒄𝒌)\n\n"
+            f"❍ <b>𝗧𝗶𝘁𝗹𝗲:</b> {one_line}\n"
+            f"❍ <b>𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗯𝘆:</b> {song_info['requester']}"
+
             "</blockquote>"
         )
         initial_progress = get_progress_bar_styled(0, total_duration)
@@ -1098,7 +1099,7 @@ async def stream_end_handler(_: PyTgCalls, update: StreamEnded):
             next_song_info = chat_containers[chat_id][0]
             try:
                 # Create a fake message object to pass
-                dummy_msg = await bot.send_message(chat_id, f"🎧 Preparing next song: **{next_song_info['title']}** ...")
+                dummy_msg = await bot.send_message(chat_id, f"🎧 💖 Next song, love…: **{next_song_info['title']}** ...")
                 await fallback_local_playback(chat_id, dummy_msg, next_song_info)
             except Exception as e:
                 print(f"Error starting next local playback: {e}")
@@ -1249,11 +1250,11 @@ async def skip_handler(client, message):
     # Check for next song
     if not chat_containers.get(chat_id):
         await status_message.edit(
-            f"⏩ Skipped **{skipped_song['title']}**.\n\n😔 No more songs in the queue."
+            f"⏩ Skipped **{skipped_song['title']}**.\n\n😔 💌 Queue’s empty, darling."
         )
     else:
         await status_message.edit(
-            f"⏩ Skipped **{skipped_song['title']}**.\n\n💕 Playing the next song..."
+            f"⏩ Skipped **{skipped_song['title']}**.\n\n🎶 Next song for you, my love…"
         )
         await skip_to_next_song(chat_id, status_message)
 
