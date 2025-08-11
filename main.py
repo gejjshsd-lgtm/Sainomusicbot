@@ -154,8 +154,7 @@ async def skip_to_next_song(chat_id, message):
         await fallback_local_playback(chat_id, message, next_song_info)
     except Exception as e:
         print(f"Error starting next local playback: {e}")
-        await bot.send_message(chat_id, f"❌ 💔 Couldn’t start our next song, love. 🌹
-: {e}")
+        await bot.send_message(chat_id, f"❌ Couldn’t start our next song, love: {e}")
 
 
 
