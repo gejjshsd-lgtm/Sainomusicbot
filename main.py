@@ -398,7 +398,7 @@ async def start_handler(_, message):
     reply_markup = InlineKeyboardMarkup(buttons)
 
     await message.reply_animation(
-        animation="https://image.cdn2.seaart.me/2024-08-22/cr3njfle878c738d170g/f083657ce3fef58cb9bd1894c0b5ee00df7c4fd1_high.webp",
+        animation="https://image.cdn2.seaart.me/2025-08-10/d2cc9hte878c73fta0h0/b3478442-555a-4190-97a1-57e41eb862dc.mp4",
         caption=caption,
         parse_mode=ParseMode.MARKDOWN,
         reply_markup=reply_markup
