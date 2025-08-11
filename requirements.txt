@@ -1,5 +1,4 @@
 git+https://github.com/prashantsahlot/FrozenGram.git
-py-tgcalls
 pytgcalls>=0.9.0
 yt-dlp
 aiohttp
