@@ -1,5 +1,5 @@
 git+https://github.com/prashantsahlot/FrozenGram.git
-pytgcalls==1.2.5
+py-tgcalls
 yt-dlp
 aiohttp
 flask
