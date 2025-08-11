@@ -142,7 +142,7 @@ async def process_pending_command(chat_id, delay):
 async def skip_to_next_song(chat_id, message):
     """Skips to the next song in the queue and starts playback."""
     if chat_id not in chat_containers or not chat_containers[chat_id]:
-        await message.edit("❌ No more songs in the queue.")
+        await message.edit("Queue’s empty, darling.❤️")
         await leave_voice_chat(chat_id)
         return
 
@@ -154,7 +154,8 @@ async def skip_to_next_song(chat_id, message):
         await fallback_local_playback(chat_id, message, next_song_info)
     except Exception as e:
         print(f"Error starting next local playback: {e}")
-        await bot.send_message(chat_id, f"❌ Failed to start next song: {e}")
+        await bot.send_message(chat_id, f"❌ 💔 Couldn’t start our next song, love. 🌹
+: {e}")
 
 
 
@@ -374,15 +375,12 @@ async def start_handler(_, message):
     help_text = to_bold_unicode("Help")
 
     caption = (
-        f"👋 нєу {user_link} 💠, 🥀\n\n"
-        f">🎶 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 {BOT_NAME.upper()}! 🎵\n"
-        ">🚀 𝗧𝗢𝗣-𝗡𝗢𝗧𝗖𝗛 24×7 𝗨𝗣𝗧𝗜𝗠𝗘 & 𝗦𝗨𝗣𝗣𝗢𝗥𝗧\n"
-        ">🔊 𝗖𝗥𝗬𝗦𝗧𝗔𝗟-𝗖𝗟𝗘𝗔𝗥 𝗔𝗨𝗗𝗜𝗢\n"
-        ">🎧 𝗦𝗨𝗣𝗣𝗢𝗥𝗧𝗘𝗗 𝗣𝗟𝗔𝗧𝗙𝗢𝗥𝗠𝗦: YouTube | Spotify | Resso | Apple Music | SoundCloud\n"
-        ">✨ 𝗔𝗨𝗧𝗢-𝗦𝗨𝗚𝗚𝗘𝗦𝗧𝗜𝗢𝗡𝗦 when queue ends\n"
-        ">🛠️ 𝗔𝗗𝗠𝗜𝗡 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦: Pause, Resume, Skip, Stop, Mute, Unmute, Tmute, Kick, Ban, Unban, Couple\n"
-        ">❤️ 𝗖𝗢𝗨𝗣𝗟𝗘 𝗦𝗨𝗚𝗚𝗘𝗦𝗧𝗜𝗢𝗡 (pick random pair in group)\n"
-        f"๏ ᴄʟɪᴄᴋ {help_text} ʙᴇʟᴏᴡ ғᴏʀ ᴄᴏᴍᴍᴀɴᴅ ʟɪsᴛ."
+       f"💖 Hey {user_link},\n"
+f"🎶 Welcome to **{BOT_NAME.upper()}** 🌹\n"
+"Crystal-clear tunes, endless love vibes, and sweet surprises…\n"
+"💑 Maybe today, the music will choose us. 😉\n\n"
+f"๏ Tap {help_text} to see my charms ❤️"
+
     )
 
     buttons = [
@@ -429,15 +427,13 @@ async def go_back_callback(_, callback_query):
     help_text = to_bold_unicode("Help")
 
     caption = (
-        f"👋 нєу {user_link} 💠, 🥀\n\n"
-        f">🎶 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 {BOT_NAME.upper()}! 🎵\n"
-        ">🚀 𝗧𝗢𝗣-𝗡𝗢𝗧𝗖𝗛 24×7 𝗨𝗣𝗧𝗜𝗠𝗘 & 𝗦𝗨𝗣𝗣𝗢𝗥𝗧\n"
-        ">🔊 𝗖𝗥𝗬𝗦𝗧𝗔𝗟-𝗖𝗟𝗘𝗔𝗥 𝗔𝗨𝗗𝗜𝗢\n"
-        ">🎧 𝗦𝗨𝗣𝗣𝗢𝗥𝗧𝗘𝗗 𝗣𝗟𝗔𝗧𝗙𝗢𝗥𝗠𝗦: YouTube | Spotify | Resso | Apple Music | SoundCloud\n"
-        ">✨ 𝗔𝗨𝗧𝗢-𝗦𝗨𝗚𝗚𝗘𝗦𝗧𝗜𝗢𝗡𝗦 when queue ends\n"
-        ">🛠️ 𝗔𝗗𝗠𝗜𝗡 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦: Pause, Resume, Skip, Stop, Mute, Unmute, Tmute, Kick, Ban, Unban, Couple\n"
-        ">❤️ 𝗖𝗢𝗨𝗣𝗟𝗘 (pick random pair in group)\n"
-        f"๏ ᴄʟɪᴄᴋ {help_text} ʙᴇʟᴏᴡ ғᴏʀ ᴄᴏᴍᴍᴀɴᴅ ʟɪsᴛ."
+       f"💖 𝐇𝐞𝐲 {user_link},\n\n"
+f"🎶 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 **{BOT_NAME.upper()}** 🌹\n"
+"💌 𝘠𝘰𝘶𝘳 24×7 𝘮𝘶𝘴𝘪𝘤 𝘴𝘰𝘶𝘭𝘮𝘢𝘵𝘦 𝘸𝘪𝘵𝘩 𝘤𝘳𝘺𝘴𝘵𝘢𝘭-𝘤𝘭𝘦𝘢𝘳 𝘵𝘶𝘯𝘦𝘴.\n"
+"🎧 𝗙𝗿𝗼𝗺 𝗬𝗼𝘂𝗧𝘂𝗯𝗲, 𝗦𝗽𝗼𝘁𝗶𝗳𝘆, 𝗥𝗲𝘀𝘀𝗼, 𝗔𝗽𝗽𝗹𝗲 𝗠𝘂𝘀𝗶𝗰 & 𝗺𝗼𝗿𝗲…\n"
+"💑 𝐈 𝐜𝐚𝐧 𝐞𝐯𝐞𝐧 𝐦𝐚𝐭𝐜𝐡 𝐜𝐨𝐮𝐩𝐥𝐞𝐬 — 𝐦𝐚𝐲𝐛𝐞 𝐢𝐭’𝐬 𝐮𝐬? 😉\n\n"
+f"๏ 𝑻𝒂𝒑 {help_text} 𝒃𝒆𝒍𝒐𝒘 𝒕𝒐 𝒔𝒆𝒆 𝒎𝒚 𝒄𝒉𝒂𝒓𝒎𝒔 ❤️"
+
     )
 
     buttons = [
